@@ -35,7 +35,7 @@ from spyne import MethodDescriptor
 
 # Empty means empty input, bare output. Doesn't say anything about response
 # being empty
-from spyne import LogicError
+from spyne import LogicError, Iterable
 from spyne import BODY_STYLE_EMPTY
 from spyne import BODY_STYLE_WRAPPED
 from spyne import BODY_STYLE_BARE
@@ -207,7 +207,7 @@ def _produce_output_message(func_name, body_style_str, self_ref_cls,
     out_params = TypeInfo()
 
     if _returns and body_style_str == 'wrapped':
-        if isinstance(_returns, (list, tuple)):
+        if isinstance(_returns, Iterable):
             default_names = ['%s%s%d'% (func_name, spyne.const.RESULT_SUFFIX, i)
                                                   for i in range(len(_returns))]
 
