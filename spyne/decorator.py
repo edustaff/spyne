@@ -35,7 +35,7 @@ from spyne import MethodDescriptor
 
 # Empty means empty input, bare output. Doesn't say anything about response
 # being empty
-from spyne import LogicError, Iterable
+from spyne import LogicError
 from spyne import BODY_STYLE_EMPTY
 from spyne import BODY_STYLE_WRAPPED
 from spyne import BODY_STYLE_BARE
@@ -43,7 +43,7 @@ from spyne import BODY_STYLE_OUT_BARE
 from spyne import BODY_STYLE_EMPTY_OUT_BARE
 
 from spyne.model import ModelBase, ComplexModel, ComplexModelBase
-from spyne.model.complex import TypeInfo, recust_selfref, SelfReference
+from spyne.model.complex import TypeInfo, recust_selfref, SelfReference, Iterable
 
 from spyne.const import add_request_suffix
 
